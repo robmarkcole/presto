@@ -43,6 +43,7 @@ function ci_micropython_clone {
     git submodule update --init lib/micropython-lib
     git submodule update --init lib/tinyusb
     git submodule update --init lib/btstack
+    git -C lib/pico-sdk apply "$CI_PROJECT_ROOT/ci/pico-sdk-multicore-lockout-interrupts.patch"
     cd "$CI_BUILD_ROOT"
 }
 
